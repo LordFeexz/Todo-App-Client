@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import router from "./routes/router";
 import store from "./store/index";
 
-function App() {
+export default function App() {
   return (
     <div>
       <Provider store={store}>
@@ -13,5 +13,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

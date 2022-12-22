@@ -1,0 +1,32 @@
+.background {
+  position: absolute;
+  background: linear-gradient(98.28deg, #eb5757 4.09%, #9b51e0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.font {
+  font-family: "inter";
+  font-size: normal;
+  font-weight: 700;
+  font-size: 117.752px;
+  line-height: 143px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.form {
+  position: absolute;
+  width: 68px;
+  height: 30px;
+  left: 995px;
+  top: 223px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.005em;
+  color: #5d5871;
+}
