@@ -1,8 +1,21 @@
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../styles/LoginForm.css";
 
 export default function LoginForm() {
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+  });
+
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setInput({
+      ...input,
+      [name]: value,
+    });
+  };
   return (
     <section className="body">
       <header>
@@ -20,7 +33,12 @@ export default function LoginForm() {
           controlId="formBasicUsername"
         >
           <Form.Label>Username</Form.Label>
-          <Form.Control type="email" placeholder="Your registered username" />
+          <Form.Control
+            type="email"
+            placeholder="Your registered username"
+            value={input.username}
+            onChange={onChangeHandler}
+          />
         </Form.Group>
 
         <Form.Group
@@ -28,7 +46,12 @@ export default function LoginForm() {
           controlId="formBasicPassword"
         >
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control
+            type="password"
+            placeholder="Password"
+            value={input.password}
+            onChange={onChangeHandler}
+          />
         </Form.Group>
         <Button className="submit" variant="primary" type="submit">
           Sign In
