@@ -5,12 +5,12 @@ import "../styles/LoginForm.css";
 export default function LoginForm() {
   return (
     <section className="body">
-      <div>
+      <header>
         <h1 className="welcome">Welcome to TO DO LIST</h1>
         <h3 className="text">
           Please sign in to your account,and start manage further
         </h3>
-      </div>
+      </header>
       <Form>
         <div>
           <h1 className="sign">Sign In</h1>
@@ -36,7 +36,10 @@ export default function LoginForm() {
       </Form>
       <div className="text-under">
         <h6>
-          Don't have an account yet?<label className="label">Sign Up</label>
+          Don't have an account yet?
+          <a href="/register" className="label">
+            Sign Up
+          </a>
         </h6>
       </div>
     </section>
