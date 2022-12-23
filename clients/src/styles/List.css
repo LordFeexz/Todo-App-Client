@@ -1,0 +1,49 @@
+.list-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.task {
+  position: absolute;
+  width: 119px;
+  height: 36px;
+  top: 166.66px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.list {
+  position: absolute;
+  width: 121px;
+  height: 36px;
+  top: 230px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.new {
+  position: absolute;
+  width: 200px;
+  height: 36px;
+  top: 420.66px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  color: #ababab;
+}
+
+.new:hover {
+  cursor: pointer;
+  color: #000000;
+}

@@ -4,7 +4,7 @@ import "../styles/LoginForm.css";
 
 export default function LoginForm() {
   return (
-    <div className="body">
+    <section className="body">
       <div>
         <h1 className="welcome">Welcome to TO DO LIST</h1>
         <h3 className="text">
@@ -39,6 +39,6 @@ export default function LoginForm() {
           Don't have an account yet?<label className="label">Sign Up</label>
         </h6>
       </div>
-    </div>
+    </section>
   );
 }
