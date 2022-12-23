@@ -50,6 +50,7 @@ export default function RegisterForm() {
             placeholder="Name"
             value={input.name}
             onChange={onChangeHandler}
+            name="name"
           />
         </Form.Group>
 
@@ -60,6 +61,7 @@ export default function RegisterForm() {
             placeholder="Username"
             value={input.username}
             onChange={onChangeHandler}
+            name="username"
           />
         </Form.Group>
 
@@ -70,6 +72,7 @@ export default function RegisterForm() {
             placeholder="Email"
             value={input.email}
             onChange={onChangeHandler}
+            name="email"
           />
         </Form.Group>
 
@@ -80,12 +83,14 @@ export default function RegisterForm() {
             placeholder="Password"
             value={input.password}
             onChange={onChangeHandler}
+            name="password"
           />
         </Form.Group>
         <Form.Select
           className=" selectLabel"
           value={input.role}
           onChange={onChangeHandler}
+          name="role"
         >
           <option disabled selected>
             Roles

@@ -5,15 +5,16 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategory } from "../actions/category";
 import "../styles/List.css";
-// import { fetchTodo } from "../actions/todo";
+import { fetchTodo } from "../actions/todo";
 
 export default function Home() {
   const dispatch = useDispatch();
-  // const { Todos } = useSelector((state) => state.todoReducer);
-  const Categories = useSelector((state) => state.categoryReducer.Categories);
+  const { Todos } = useSelector((state) => state.todoReducer);
+  const { Categories } = useSelector((state) => state.categoryReducer);
 
   useEffect(() => {
     dispatch(fetchCategory());
+    dispatch(fetchTodo());
   }, []);
 
   return (
@@ -30,7 +31,9 @@ export default function Home() {
             <h4 className="new">+New Category</h4>
           </Col>
           <Col md="8" lg="8" xl="8" sm="8">
-            <MyTask />
+            {Todos.map((todo) => {
+              return <MyTask todo={todo} key={todo._id} />;
+            })}
           </Col>
         </Row>
       </Container>

@@ -47,10 +47,11 @@ export default function LoginForm() {
         >
           <Form.Label>Username</Form.Label>
           <Form.Control
-            type="email"
+            type="text"
             placeholder="Your registered username"
             value={input.username}
             onChange={onChangeHandler}
+            name="username"
           />
         </Form.Group>
 
@@ -64,6 +65,7 @@ export default function LoginForm() {
             placeholder="Password"
             value={input.password}
             onChange={onChangeHandler}
+            name="password"
           />
         </Form.Group>
         <Button className="submit" variant="primary" type="submit">

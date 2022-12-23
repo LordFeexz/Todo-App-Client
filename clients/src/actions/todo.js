@@ -4,11 +4,11 @@ const url = `http://localhost:3001`;
 
 export const fetchTodo = () => async (dispatch, getState) => {
   try {
-    const { Users } = getState();
+    const { userReducer } = getState();
     const resp = await fetch(`${url}/todo/`, {
       headers: {
         "Content-Type": "application/json",
-        accessToken: Users.accessToken,
+        accessToken: userReducer.Users.accessToken,
       },
     });
     if (!resp.ok) throw new Error("error fetch data");

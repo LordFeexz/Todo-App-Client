@@ -1,7 +1,7 @@
 import "../styles/my.css";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 
-export default function MyTask() {
+export default function MyTask({ todo }) {
   return (
     <section>
       <h1 className="all">All Tasks</h1>
@@ -25,20 +25,16 @@ export default function MyTask() {
         <Row>
           <Col md="2" lg="2" xl="2" sm="2">
             <div className="box-section">
-              <div className="box checkList"></div>
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
-              <div className="box"></div>
+              {todo.complete ? (
+                <div className="box"></div>
+              ) : (
+                <div className="box checkList"></div>
+              )}
             </div>
           </Col>
           <Col md="10" lg="10" xl="10" sm="10">
             <div className="text-section">
-              <h3>Tes</h3>
-              <h3>Tes</h3>
-              <h3>Tes</h3>
-              <h3>Tes</h3>
-              <h3>Tes</h3>
+              <h3>{todo.name}</h3>
             </div>
           </Col>
         </Row>
