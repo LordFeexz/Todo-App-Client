@@ -1,9 +1,14 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login } from "../actions/user";
 import "../styles/LoginForm.css";
 
 export default function LoginForm() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     username: "",
     password: "",
@@ -16,6 +21,14 @@ export default function LoginForm() {
       [name]: value,
     });
   };
+
+  const submit = (e) => {
+    e.preventDefault();
+    dispatch(login(input))
+      .then(() => navigate("/"))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <section className="body">
       <header>
@@ -24,7 +37,7 @@ export default function LoginForm() {
           Please sign in to your account,and start manage further
         </h3>
       </header>
-      <Form>
+      <Form onSubmit={submit}>
         <div>
           <h1 className="sign">Sign In</h1>
         </div>
