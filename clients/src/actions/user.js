@@ -46,7 +46,7 @@ export const register = (payload) => async (dispatch) => {
       body: JSON.stringify(payload),
     });
     if (!resp.ok) throw new Error("error register");
-    return resp;
+    return resp.json();
   } catch (err) {
     return err;
   }

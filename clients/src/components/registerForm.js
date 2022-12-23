@@ -1,8 +1,13 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { register } from "../actions/user";
 
 export default function RegisterForm() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     name: "",
     username: "",
@@ -18,6 +23,14 @@ export default function RegisterForm() {
       [name]: value,
     });
   };
+
+  const submit = (e) => {
+    e.preventDefault();
+    dispatch(register(input))
+      .then(() => navigate("/register"))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <section className="body">
       <header>
@@ -26,7 +39,7 @@ export default function RegisterForm() {
           Please sign in to your account,and start manage further
         </h3>
       </header>
-      <Form>
+      <Form onSubmit={submit}>
         <div>
           <h1 className="sign">Sign In</h1>
         </div>
