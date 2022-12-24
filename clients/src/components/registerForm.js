@@ -8,6 +8,7 @@ import { register } from "../actions/user";
 export default function RegisterForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     name: "",
     username: "",
@@ -26,10 +27,20 @@ export default function RegisterForm() {
 
   const submit = (e) => {
     e.preventDefault();
+    setLoading(true);
     dispatch(register(input))
       .then(() => navigate("/login"))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   };
+
+  if (loading) {
+    return (
+      <>
+        <h1>Loading...</h1>
+      </>
+    );
+  }
 
   return (
     <section className="body">

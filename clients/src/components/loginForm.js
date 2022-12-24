@@ -9,6 +9,7 @@ import "../styles/LoginForm.css";
 export default function LoginForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     username: "",
     password: "",
@@ -24,10 +25,20 @@ export default function LoginForm() {
 
   const submit = (e) => {
     e.preventDefault();
+    setLoading(true);
     dispatch(login(input))
       .then(() => navigate("/"))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
   };
+
+  if (loading) {
+    return (
+      <>
+        <h1>Loading...</h1>
+      </>
+    );
+  }
 
   return (
     <section className="body">
