@@ -65,6 +65,19 @@
 }
 
 .checkList {
-  position: absolute;
   background: #39ae68;
+}
+
+.todo-list {
+  width: 377px;
+  height: 300px;
+  margin-top: 220px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

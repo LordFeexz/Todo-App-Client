@@ -84,13 +84,13 @@ export default function Home() {
               </Container>
             </Form>
             <h1 className="task">All Category</h1>
-            {Categories.map((category) => {
-              return (
-                <List className="list" category={category} key={category._id} />
-              );
-            })}
+            <div className="list">
+              {Categories.map((category) => {
+                return <List category={category} key={category._id} />;
+              })}
+            </div>
             {inputToggle ? (
-              <Form onSubmit={submitCategory}>
+              <Form className="new" onSubmit={submitCategory}>
                 <Container>
                   <Row>
                     <Col>
@@ -126,14 +126,16 @@ export default function Home() {
           >
             <h1 className="all">All Task</h1>
             {Todos.length > 0 ? (
-              Todos.map((todo) => {
-                return <MyTask todo={todo} key={todo._id} />;
-              })
+              <div className="todo-list">
+                {Todos.map((todo) => {
+                  return <MyTask todo={todo} key={todo._id} />;
+                })}
+              </div>
             ) : (
               <div
                 style={{
                   position: "absolute",
-                  left: "500px",
+                  left: "550px",
                   top: "250px",
                 }}
               >

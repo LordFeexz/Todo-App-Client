@@ -20,14 +20,22 @@
 .list {
   position: absolute;
   width: 121px;
-  height: 36px;
-  top: 230px;
+  height: 160px;
+  top: 240px;
   font-family: "SF Pro";
   font-style: normal;
   font-weight: 400;
   font-size: 30px;
   line-height: 36px;
   color: #000000;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .new {

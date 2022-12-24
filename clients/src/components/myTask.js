@@ -24,17 +24,39 @@ export default function MyTask({ todo }) {
     <>
       <Container>
         <Row>
-          <Col md="2" lg="2" xl="2" sm="2" className="box-section">
+          <Col md="2" lg="2" xl="2" sm="2">
             {todo.complete ? (
-              <div className="box checkList"></div>
+              <div
+                className="box checkList"
+                style={{
+                  margin: "20px",
+                  padding: "20px",
+                }}
+              ></div>
             ) : (
-              <button onClick={clickHandler} className="box"></button>
+              <button
+                style={{
+                  margin: "20px",
+                  padding: "20px",
+                }}
+                onClick={clickHandler}
+                className="box"
+              ></button>
             )}
           </Col>
           <Col md="10" lg="10" xl="10" sm="10">
             <Container>
               <Row>
-                <Col md="12">
+                <Col
+                  md="12"
+                  lg="12"
+                  xl="12"
+                  sm="12"
+                  style={{
+                    margin: "20px",
+                    padding: "20px",
+                  }}
+                >
                   <h3>{todo.name}</h3>
                 </Col>
               </Row>
