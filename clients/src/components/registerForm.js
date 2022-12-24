@@ -27,7 +27,7 @@ export default function RegisterForm() {
   const submit = (e) => {
     e.preventDefault();
     dispatch(register(input))
-      .then(() => navigate("/register"))
+      .then(() => navigate("/login"))
       .catch((err) => console.log(err));
   };
 

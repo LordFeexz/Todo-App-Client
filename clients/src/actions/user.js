@@ -38,7 +38,7 @@ export const register = (payload) => async (dispatch) => {
     if (payload.password == "") throw new Error("invalid input");
     if (payload.role == "") throw new Error("invalid input");
 
-    const resp = await fetch(`${url}/auth/login`, {
+    const resp = await fetch(`${url}/auth/register`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
