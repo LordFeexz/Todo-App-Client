@@ -23,19 +23,22 @@ export const fetchCategorySuccess = (payload) => {
 
 export const addCategory = (name) => async (dispatch, getState) => {
   try {
-    const { Users, Categories } = getState();
+    if (name === "") throw new Error("invalid category name input");
+    const { userReducer, categoryReducer } = getState();
     const resp = await fetch(`${url}/category/`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        accessToken: Users.accessToken,
+        access_token: userReducer,
       },
       body: JSON.stringify(name),
     });
 
     if (!resp.ok) throw new Error("error add category");
 
-    dispatch(fetchCategorySuccess(Categories.push(name)));
+    categoryReducer.Categories.push(name);
+
+    dispatch(fetchCategorySuccess(categoryReducer.Categories));
 
     return resp.json();
   } catch (err) {

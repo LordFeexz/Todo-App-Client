@@ -1,11 +1,18 @@
-body div .number {
+body div .nf {
   display: flex;
   flex-flow: row wrap;
   align-content: center;
   justify-content: center;
 }
 
-div .number {
+body a .nf {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+div .nf {
   width: 100%;
   text-align: center;
 }
@@ -50,9 +57,9 @@ div .number {
   }
 }
 
-.text {
+.text-nf {
   font: 400 5vmin "Courgette";
 }
-.text span {
+.text-nf span {
   font-size: 10vmin;
 }

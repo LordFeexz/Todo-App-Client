@@ -41,7 +41,9 @@ export const addTodo = (payload) => async (dispatch, getState) => {
 
     if (!resp.ok) throw new Error("error add");
 
-    dispatch(fetchTodoSuccess(todoReducer.Todos.push(payload)));
+    todoReducer.Todos.push(payload);
+
+    dispatch(fetchTodoSuccess(todoReducer.Todos));
 
     return resp.json();
   } catch (err) {
