@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register } from "../actions/user";
+import "../styles/RegisterForm.css";
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
@@ -43,75 +44,81 @@ export default function RegisterForm() {
   }
 
   return (
-    <section className="body">
+    <section className="body-regis-form">
       <header>
-        <h1 className="welcome">Welcome to TO DO LIST</h1>
-        <h3 className="text">
+        <h1 className="welcome-regis-form">Welcome to TO DO LIST</h1>
+        <h3 className="text-regis-form">
           Please sign in to your account,and start manage further
         </h3>
       </header>
       <Form onSubmit={submit}>
         <div>
-          <h1 className="sign">Sign In</h1>
+          <h1 className="sign-regis-form">Sign In</h1>
+          <Form.Group className="nameLabel-regis" controlId="formBasicName">
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Name"
+              value={input.name}
+              onChange={onChangeHandler}
+              name="name"
+            />
+          </Form.Group>
+
+          <Form.Group
+            className="usernameLabel-regis"
+            controlId="formBasicUsername"
+          >
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              value={input.username}
+              onChange={onChangeHandler}
+              name="username"
+            />
+          </Form.Group>
+
+          <Form.Group className="emailLabel-regis" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              value={input.email}
+              onChange={onChangeHandler}
+              name="email"
+            />
+          </Form.Group>
+
+          <Form.Group
+            className=" passwordLabel-regis"
+            controlId="formBasicPassword"
+          >
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={input.password}
+              onChange={onChangeHandler}
+              name="password"
+            />
+          </Form.Group>
+          <Form.Select
+            className=" selectLabel-regis"
+            value={input.role}
+            onChange={onChangeHandler}
+            name="role"
+          >
+            <option disabled selected>
+              Roles
+            </option>
+            <option>admin</option>
+            <option>user</option>
+          </Form.Select>
+          <Button className="submitRegis" variant="primary" type="submit">
+            Sign In
+          </Button>
         </div>
-        <Form.Group className="nameLabel" controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Name"
-            value={input.name}
-            onChange={onChangeHandler}
-            name="name"
-          />
-        </Form.Group>
-
-        <Form.Group className="usernameLabel" controlId="formBasicUsername">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Username"
-            value={input.username}
-            onChange={onChangeHandler}
-            name="username"
-          />
-        </Form.Group>
-
-        <Form.Group className="emailLabel" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Email"
-            value={input.email}
-            onChange={onChangeHandler}
-            name="email"
-          />
-        </Form.Group>
-
-        <Form.Group className=" passwordLabel" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={input.password}
-            onChange={onChangeHandler}
-            name="password"
-          />
-        </Form.Group>
-        <Form.Select
-          className=" selectLabel"
-          value={input.role}
-          onChange={onChangeHandler}
-          name="role"
-        >
-          <option disabled selected>
-            Roles
-          </option>
-          <option>admin</option>
-          <option>user</option>
-        </Form.Select>
-        <Button className="submit" variant="primary" type="submit">
-          Sign In
-        </Button>
       </Form>
     </section>
   );

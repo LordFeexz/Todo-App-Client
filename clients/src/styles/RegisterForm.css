@@ -1,4 +1,4 @@
-.body {
+.body-regis-form {
   position: absolute;
   width: 509px;
   height: 1024px;
@@ -6,11 +6,14 @@
   background: #ffffff;
 }
 
-.welcome {
+.welcome-regis-form {
   position: absolute;
+  width: 222px;
+  height: 30px;
+  left: 0px;
   top: 126px;
   font-family: "Poppins";
-  font-size: normal;
+  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
@@ -18,8 +21,11 @@
   color: #5d5871;
 }
 
-.text {
+.text-regis-form {
   position: absolute;
+  width: 374px;
+  height: 17px;
+  left: 0px;
   top: 136px;
   font-family: "Poppins";
   font-size: normal;
@@ -30,11 +36,12 @@
   color: #6d6b7a;
 }
 
-.sign {
+.sign-regis-form {
   position: absolute;
-  width: 68px;
+  width: 78px;
   height: 30px;
   top: 223px;
+  left: 0px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -44,62 +51,70 @@
   color: #5d5871;
 }
 
-.nameLabel {
+.nameLabel-regis {
   box-sizing: border-box;
   position: absolute;
   width: 381px;
   height: 44px;
-  left: 995px;
+  left: 0px;
   top: 295px;
   background: #ffffff;
-  border: 1px solid #e6eaec;
-  border-radius: 5px;
 }
 
-.usernameLabel {
+.usernameLabel-regis {
   box-sizing: border-box;
   position: absolute;
   width: 381px;
   height: 44px;
-  left: 995px;
+  left: 0px;
   top: 376px;
   background: #ffffff;
   border: 1px solid #e6eaec;
   border-radius: 5px;
 }
 
-.emailLabel {
+.emailLabel-regis {
   box-sizing: border-box;
   position: absolute;
   width: 381px;
   height: 44px;
-  left: 995px;
+  left: 0px;
   top: 457px;
   background: #ffffff;
   border: 1px solid #e6eaec;
   border-radius: 5px;
 }
 
-.passwordLabel {
+.passwordLabel-regis {
   box-sizing: border-box;
   position: absolute;
   width: 381px;
   height: 44px;
-  left: 995px;
+  left: 0px;
   top: 538px;
   background: #ffffff;
   border: 1px solid #e6eaec;
   border-radius: 5px;
 }
 
-.selectLabel {
+.selectLabel-regis {
   box-sizing: border-box;
   position: absolute;
   width: 381px;
   height: 44px;
-  left: 995px;
+  left: 0px;
   top: 619px;
   background: #ffffff;
   border: 1px solid #e6eaec;
+  border-radius: 5px;
+}
+
+.submitRegis {
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 703px;
+  background: #1571de;
   border-radius: 5px;
 }
