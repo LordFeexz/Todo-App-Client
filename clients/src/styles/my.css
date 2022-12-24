@@ -40,7 +40,7 @@
   position: absolute;
   top: 35%;
   right: 17.07%;
-  left: 33.21%;
+  left: 38%;
   width: 40px;
   margin: 10px;
   height: 40px;
@@ -58,6 +58,10 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+
+.box {
+  cursor: pointer;
 }
 
 .checkList {

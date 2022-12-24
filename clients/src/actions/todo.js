@@ -8,7 +8,7 @@ export const fetchTodo = () => async (dispatch, getState) => {
     const resp = await fetch(`${url}/todo/`, {
       headers: {
         "Content-Type": "application/json",
-        accessToken: userReducer.Users.accessToken,
+        access_token: userReducer,
       },
     });
     if (!resp.ok) throw new Error("error fetch data");
@@ -29,19 +29,19 @@ export const fetchTodoSuccess = (payload) => {
 
 export const addTodo = (payload) => async (dispatch, getState) => {
   try {
-    const { Users, Todos } = getState();
+    const { userReducer, todoReducer } = getState();
     const resp = await fetch(`${url}/todo/`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        accessToken: Users.accessToken,
+        access_token: userReducer,
       },
       body: JSON.stringify(payload),
     });
 
     if (!resp.ok) throw new Error("error add");
 
-    dispatch(fetchTodoSuccess(Todos.push(payload)));
+    dispatch(fetchTodoSuccess(todoReducer.Todos.push(payload)));
 
     return resp.json();
   } catch (err) {
@@ -51,15 +51,17 @@ export const addTodo = (payload) => async (dispatch, getState) => {
 
 export const completeTodo = (id) => async (dispatch, getState) => {
   try {
-    const { Users } = getState();
+    const userReducer = getState();
     const resp = await fetch(`${url}/todo/${id}`, {
       method: "patch",
       headers: {
         "Content-Type": "application/json",
-        accessToken: Users.accessToken,
+        access_token: userReducer,
+        mode: "no-cors",
       },
     });
     if (!resp.ok) throw new Error("error add");
+    console.log(resp, "<<<");
 
     const data = await resp.json();
 
