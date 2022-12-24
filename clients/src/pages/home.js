@@ -19,6 +19,7 @@ export default function Home() {
     name: "",
   });
   const [inputToggle, setInputToggle] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const changeInput = () => {
     inputToggle ? setInputToggle(false) : setInputToggle(true);
@@ -34,9 +35,13 @@ export default function Home() {
 
   const submitCategory = (e) => {
     e.preventDefault();
-    categoryInput.name === ""
-      ? changeInput()
-      : dispatch(addCategory(categoryInput));
+    categoryInput.name === "" ? changeInput() : setLoading(true);
+    dispatch(addCategory(categoryInput))
+      .then(() => {
+        setLoading(false);
+        setCategoryInput({ name: "" });
+      })
+      .catch((err) => console.log(err));
   };
 
   const onChangeHandler = (e) => {
@@ -49,13 +54,27 @@ export default function Home() {
 
   const submit = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
+    setLoading(true);
+    dispatch(addTodo(input))
+      .then(() => {
+        setLoading(false);
+        setInput({ name: "" });
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     dispatch(fetchCategory());
     dispatch(fetchTodo());
   }, []);
+
+  if (loading) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
 
   return (
     <section>
