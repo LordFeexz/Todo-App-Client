@@ -1,0 +1,89 @@
+.body {
+  position: absolute;
+  width: 509px;
+  height: 1024px;
+  top: 0px;
+  background: #ffffff;
+}
+
+.welcome {
+  position: absolute;
+  top: 126px;
+  font-family: "Poppins";
+  font-size: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.005em;
+  color: #5d5871;
+}
+
+.text {
+  position: absolute;
+  top: 136px;
+  font-family: "Poppins";
+  font-size: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130px;
+  letter-spacing: 0.005em;
+  color: #6d6b7a;
+}
+
+.sign {
+  position: absolute;
+  width: 68px;
+  height: 30px;
+  top: 223px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.005em;
+  color: #5d5871;
+}
+
+.usernameLabel {
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  top: 295px;
+  background: #ffffff;
+}
+
+.passwordLabel {
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  top: 376px;
+  background: #ffffff;
+}
+
+.submit {
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  top: 460px;
+  background: #1571de;
+  border-radius: 5px;
+}
+
+.text-under {
+  position: absolute;
+  width: 233px;
+  height: 17px;
+  left: 75px;
+  top: 534px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130%;
+  letter-spacing: 0.005em;
+  color: #333333;
+}
+
+.label {
+  color: blue;
+}

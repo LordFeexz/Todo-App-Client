@@ -1,0 +1,65 @@
+.list-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.task {
+  position: absolute;
+  width: 119px;
+  height: 36px;
+  top: 166.66px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.list {
+  position: absolute;
+  width: 121px;
+  height: 160px;
+  top: 240px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  color: #000000;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.new {
+  position: absolute;
+  width: 200px;
+  height: 36px;
+  top: 420.66px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  color: #ababab;
+}
+
+.new:hover {
+  cursor: pointer;
+  color: #000000;
+}
+
+.empty {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 230px;
+  display: flex;
+}
