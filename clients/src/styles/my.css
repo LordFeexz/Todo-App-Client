@@ -1,0 +1,97 @@
+.all {
+  position: absolute;
+  width: 199px;
+  height: 60px;
+  left: 478.24px;
+  top: 84.16px;
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  color: #000000;
+}
+
+.formTask {
+  position: absolute;
+  left: 33.21%;
+  right: 17.07%;
+  top: 25%;
+  bottom: 77.57%;
+  background: #e1dede;
+  border-radius: 6px;
+}
+
+.btnTask {
+  position: absolute;
+  top: 25%;
+  right: 17.07%;
+  left: 75%;
+}
+
+.box-section {
+  position: absolute;
+  top: 35%;
+  right: 17.07%;
+  left: 33.21%;
+}
+
+.text-section {
+  position: absolute;
+  top: 35%;
+  right: 17.07%;
+  left: 38%;
+  width: 40px;
+  margin: 10px;
+  height: 40px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.box {
+  width: 40px;
+  margin: 10px;
+  height: 40px;
+  border: 3px solid #eb5757;
+  border-radius: 15px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.box {
+  cursor: pointer;
+}
+
+.checkList {
+  background: #39ae68;
+}
+
+.todo-checklist {
+  text-decoration: line-through;
+}
+
+.todo-list {
+  width: 377px;
+  height: 300px;
+  margin-top: 220px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.new-category {
+  font-size: smaller;
+  margin-left: 15px;
+}
+
+.new-category:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

@@ -1,0 +1,21 @@
+.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.font {
+  margin-top: 40px;
+  left: 50px;
+}
+
+@media (max-width: 500px) {
+  .login {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .font {
+    position: absolute;
+    margin: 0;
+  }
+}

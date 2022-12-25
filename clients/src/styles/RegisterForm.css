@@ -1,0 +1,120 @@
+.body-regis-form {
+  position: absolute;
+  width: 509px;
+  height: 1024px;
+  top: 0px;
+  background: #ffffff;
+}
+
+.welcome-regis-form {
+  position: absolute;
+  width: 222px;
+  height: 30px;
+  left: 0px;
+  top: 126px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.005em;
+  color: #5d5871;
+}
+
+.text-regis-form {
+  position: absolute;
+  width: 374px;
+  height: 17px;
+  left: 0px;
+  top: 136px;
+  font-family: "Poppins";
+  font-size: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 130px;
+  letter-spacing: 0.005em;
+  color: #6d6b7a;
+}
+
+.sign-regis-form {
+  position: absolute;
+  width: 78px;
+  height: 30px;
+  top: 223px;
+  left: 0px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.005em;
+  color: #5d5871;
+}
+
+.nameLabel-regis {
+  box-sizing: border-box;
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 295px;
+  background: #ffffff;
+}
+
+.usernameLabel-regis {
+  box-sizing: border-box;
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 376px;
+  background: #ffffff;
+  border: 1px solid #e6eaec;
+  border-radius: 5px;
+}
+
+.emailLabel-regis {
+  box-sizing: border-box;
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 457px;
+  background: #ffffff;
+  border: 1px solid #e6eaec;
+  border-radius: 5px;
+}
+
+.passwordLabel-regis {
+  box-sizing: border-box;
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 538px;
+  background: #ffffff;
+  border: 1px solid #e6eaec;
+  border-radius: 5px;
+}
+
+.selectLabel-regis {
+  box-sizing: border-box;
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 619px;
+  background: #ffffff;
+  border: 1px solid #e6eaec;
+  border-radius: 5px;
+}
+
+.submitRegis {
+  position: absolute;
+  width: 381px;
+  height: 44px;
+  left: 0px;
+  top: 703px;
+  background: #1571de;
+  border-radius: 5px;
+}
