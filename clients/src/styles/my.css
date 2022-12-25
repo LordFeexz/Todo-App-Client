@@ -81,3 +81,13 @@
   width: 0;
   height: 0;
 }
+
+.new-category {
+  font-size: smaller;
+  margin-left: 15px;
+}
+
+.new-category:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

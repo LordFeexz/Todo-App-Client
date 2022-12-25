@@ -1,12 +1,36 @@
 import "../styles/my.css";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, Form, Button } from "react-bootstrap";
 import { completeTodo } from "../actions/todo";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { addTodoCategory } from "../actions/todo";
 
 export default function MyTask({ todo }) {
   const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
+  const [inputToggle, setInputToggle] = useState(false);
+  const { Categories } = useSelector((state) => state.categoryReducer);
+  const onChangeHandler = (e) => {
+    const { value } = e.target;
+    setInput(value);
+  };
+
+  const changeInput = () => {
+    inputToggle ? setInputToggle(false) : setInputToggle(true);
+  };
+
+  const submit = (e) => {
+    e.preventDefault();
+    input === "" ? changeInput() : setLoading(true);
+    dispatch(addTodoCategory(todo._id, input))
+      .then(() => {
+        setLoading(false);
+        setInput("");
+      })
+      .catch((err) => console.log(err));
+  };
+
   const clickHandler = async () => {
     setLoading(true);
     dispatch(completeTodo(todo._id))
@@ -26,13 +50,15 @@ export default function MyTask({ todo }) {
         <Row>
           <Col md="2" lg="2" xl="2" sm="2">
             {todo.complete ? (
-              <div
-                className="box checkList"
-                style={{
-                  margin: "20px",
-                  padding: "20px",
-                }}
-              ></div>
+              <div>
+                <div
+                  className="box checkList"
+                  style={{
+                    margin: "20px",
+                    padding: "20px",
+                  }}
+                ></div>
+              </div>
             ) : (
               <button
                 style={{
@@ -55,9 +81,59 @@ export default function MyTask({ todo }) {
                   style={{
                     margin: "20px",
                     padding: "20px",
+                    display: "flex",
+                    flexDirection: "row",
                   }}
                 >
-                  <h3>{todo.name}</h3>
+                  <Container>
+                    <Row>
+                      <Col md="9" sm="9" lg="9" xl="9">
+                        <h3>{todo.name}</h3>
+                      </Col>
+                      <Col md="3" sm="3" lg="3" xl="3">
+                        {todo.CategoryId ? (
+                          <div>{todo.CategoryId}</div>
+                        ) : (
+                          <div>
+                            {inputToggle ? (
+                              <Form onSubmit={submit}>
+                                <Form.Select
+                                  size="sm"
+                                  value={input}
+                                  onChange={onChangeHandler}
+                                >
+                                  <option disabled selected>
+                                    --Select Category--
+                                  </option>
+                                  {Categories.map((category) => {
+                                    return (
+                                      <option value={category._id}>
+                                        {category.name}
+                                      </option>
+                                    );
+                                  })}
+                                </Form.Select>
+                                <Button
+                                  className="submitCategory"
+                                  variant="primary"
+                                  type="submit"
+                                >
+                                  Add
+                                </Button>
+                              </Form>
+                            ) : (
+                              <h1
+                                onClick={changeInput}
+                                className="new-category"
+                              >
+                                Add Category
+                              </h1>
+                            )}
+                          </div>
+                        )}
+                      </Col>
+                    </Row>
+                  </Container>
                 </Col>
               </Row>
             </Container>

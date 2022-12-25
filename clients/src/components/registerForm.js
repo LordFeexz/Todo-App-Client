@@ -112,8 +112,8 @@ export default function RegisterForm() {
             <option disabled selected>
               Roles
             </option>
-            <option>admin</option>
-            <option>user</option>
+            <option value="admin">admin</option>
+            <option value="user">user</option>
           </Form.Select>
           <Button className="submitRegis" variant="primary" type="submit">
             Sign In

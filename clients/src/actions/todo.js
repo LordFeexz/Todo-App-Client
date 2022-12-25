@@ -63,7 +63,6 @@ export const completeTodo = (id) => async (dispatch, getState) => {
       },
     });
     if (!resp.ok) throw new Error("error add");
-    console.log(resp, "<<<");
 
     const data = await resp.json();
 
@@ -74,3 +73,27 @@ export const completeTodo = (id) => async (dispatch, getState) => {
     return err;
   }
 };
+
+export const addTodoCategory =
+  (id, CategoryId) => async (dispatch, getState) => {
+    try {
+      const userReducer = getState();
+      const resp = await fetch(`${url}/todo/category/${id}`, {
+        method: "patch",
+        headers: {
+          "Content-Type": "application/json",
+          access_token: userReducer,
+          mode: "no-cors",
+        },
+        body: JSON.stringify(CategoryId),
+      });
+
+      if (!resp.ok) throw new Error("error add category");
+
+      dispatch(fetchTodo());
+
+      return resp.json();
+    } catch (err) {
+      return err;
+    }
+  };
