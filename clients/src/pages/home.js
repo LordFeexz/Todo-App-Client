@@ -66,6 +66,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchCategory());
     dispatch(fetchTodo());
+    console.log(Todos, "<<");
   }, []);
 
   if (loading) {

@@ -11,6 +11,10 @@ export default function MyTask({ todo }) {
   const dispatch = useDispatch();
   const [inputToggle, setInputToggle] = useState(false);
   const { Categories } = useSelector((state) => state.categoryReducer);
+  const categoryName = Categories.find((el) => {
+    if (todo.CategoryId && el._id == todo.CategoryId) return el.name;
+    else return false;
+  });
   const onChangeHandler = (e) => {
     const { value } = e.target;
     setInput(value);
@@ -88,11 +92,15 @@ export default function MyTask({ todo }) {
                   <Container>
                     <Row>
                       <Col md="9" sm="9" lg="9" xl="9">
-                        <h3>{todo.name}</h3>
+                        {todo.complete ? (
+                          <h3 className="todo-checklist">{todo.name}</h3>
+                        ) : (
+                          <h3>{todo.name}</h3>
+                        )}
                       </Col>
                       <Col md="3" sm="3" lg="3" xl="3">
                         {todo.CategoryId ? (
-                          <div>{todo.CategoryId}</div>
+                          <div>{categoryName ? categoryName.name : ""}</div>
                         ) : (
                           <div>
                             {inputToggle ? (

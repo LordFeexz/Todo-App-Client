@@ -14,7 +14,7 @@ export const login = (payload) => async (dispatch) => {
       },
       body: JSON.stringify(payload),
     });
-    if (!resp.ok) throw new Error("error add");
+    if (!resp.ok) throw new Error("error login");
     const data = await resp.json();
     dispatch(loginSuccess(data));
     return data;

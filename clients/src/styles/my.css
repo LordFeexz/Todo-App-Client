@@ -68,6 +68,10 @@
   background: #39ae68;
 }
 
+.todo-checklist {
+  text-decoration: line-through;
+}
+
 .todo-list {
   width: 377px;
   height: 300px;
